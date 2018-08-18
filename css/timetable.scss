@@ -1,0 +1,167 @@
+$background: lighten(rgb(42, 82, 152), 55);
+$grid_color: #bbb;
+
+@import "ctu_style";
+
+.timetable {
+  position: relative;
+  display: flex;
+  font-family: 'Roboto Mono', monospace !important;
+  flex-direction: column;
+  width: 100%;
+  > .time-grid {
+  }
+  > .day:nth-child(2n) {
+    background-color: $background;
+  }
+  > .day {
+    display: flex;
+    flex-grow: 1;
+    > .day-header {
+      margin-top: auto;
+      width: 6em;
+      padding-left: 0.5em;
+      margin-bottom: auto;
+    }
+    > .day-content {
+      display: grid;
+      grid-template-columns: repeat(56, 1fr); //Hack
+      grid-template-rows: repeat(12, 1fr);
+      flex-grow: 1;
+    }
+  }
+}
+
+.timetable.headless{
+  .day-header {
+    visibility: hidden;
+  }
+  .grid {
+    left:0;
+  }
+}
+
+.timetable {
+  .grid {
+    display: flex;
+    position: absolute;
+    left: 6em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    > div {
+      flex-grow: 1;
+      position: relative;
+      border-left: 1px solid $grid_color;
+      margin: 0.5em 0;
+    }
+    > div::after {
+      position: absolute;
+      display: block;
+      content: attr(data-content);
+      left: -50%;
+      color: $grid_color;
+      width: 100%;
+      text-align: center;
+      top: calc(100% + 1em);
+    }
+  }
+}
+
+.timetable {
+  .record {
+    margin: 7px 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #333;
+    input[type='checkbox'] {
+      display: none;
+    }
+    > .record-header {
+      overflow: hidden;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      max-width: calc(100% - 14px);
+      max-height: calc(100% - 5px);
+      vertical-align: bottom;
+      text-align: right;
+      text-transform: uppercase;
+      color: white;
+      cursor: pointer;
+      padding: 5px;
+      transition: max-width .25s linear 1s, max-height .25s linear 1s, background-color .25s ease-in-out;
+      padding-top: 0;
+      > div {
+        width: 15em;height: 15em;
+      }
+    }
+    .record-tg:checked + .record-header {
+      max-width: 15em;
+      max-height: 4em;
+      right: auto;
+      top: auto;
+      transition: max-width .25s linear, max-height .25s linear;
+    }
+    .record-content {
+      max-height: 0px;
+      overflow: hidden;
+      position: absolute;
+      top: 100%;
+      z-index: 1;
+      left: 0;
+      transition: max-height 1s linear;
+    }
+    .record-content > div {
+      padding: 4px;
+      width: 15em;
+    }
+    .record-tg:checked + .record-header + .record-content {
+      max-height: 250px;
+      transition: max-height 1s linear .25s;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .timetable {
+    height: auto;
+    .grid {
+      visibility: hidden;
+    }
+    .day {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1em;
+      .day-header {
+        left: 0;
+        right: 0;
+        padding-top: 0.5em;
+        text-align: center;
+        width: auto;
+      }
+      .day-content {
+        display: flex;
+        flex-direction: column;
+        .record {
+          display: block;
+          .record-header {
+            position: relative;
+            max-width: initial;
+            margin: 0 0.5em;
+          }
+          .record-content {
+            position: initial;
+            max-width: initial;
+            padding: 0 0.5em;
+            > div {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

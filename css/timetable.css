@@ -1,0 +1,159 @@
+.record-ctu.lecture .record-header {
+  background: #142748; }
+.record-ctu.lecture input:active + .record-header, .record-ctu.lecture input:hover + .record-header, .record-ctu.lecture .record-header:hover {
+  background: #1f3c70; }
+.record-ctu.lecture .record-content > div {
+  border-bottom: 5px #142748 solid; }
+
+.record-ctu .record-content > div {
+  background: white;
+  border-left: #aaa 1px solid;
+  border-right: #aaa 1px solid; }
+.record-ctu .ctu {
+  display: block; }
+.record-ctu .record-header .ctu-code {
+  font-size: 1.2em; }
+.record-ctu .record-header .ctu-time, .record-ctu .record-header .ctu-room {
+  font-size: 0.6em; }
+.record-ctu .record-header .ctu {
+  display: block; }
+.record-ctu .record-content .ctu-code {
+  text-decoration: none;
+  color: #142748; }
+.record-ctu .record-content .ctu-type {
+  color: #6b92d6;
+  font-size: 0.75em; }
+.record-ctu .record-content .ctu-teacher {
+  text-decoration: none;
+  color: #142748;
+  font-size: 0.75em; }
+
+.timetable {
+  position: relative;
+  display: flex;
+  font-family: 'Roboto Mono', monospace !important;
+  flex-direction: column;
+  width: 100%; }
+  .timetable > .day:nth-child(2n) {
+    background-color: #e3ebf7; }
+  .timetable > .day {
+    display: flex;
+    flex-grow: 1; }
+    .timetable > .day > .day-header {
+      margin-top: auto;
+      width: 6em;
+      padding-left: 0.5em;
+      margin-bottom: auto; }
+    .timetable > .day > .day-content {
+      display: grid;
+      grid-template-columns: repeat(56, 1fr);
+      grid-template-rows: repeat(12, 1fr);
+      flex-grow: 1; }
+
+.timetable.headless .day-header {
+  visibility: hidden; }
+.timetable.headless .grid {
+  left: 0; }
+
+.timetable .grid {
+  display: flex;
+  position: absolute;
+  left: 6em;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+  .timetable .grid > div {
+    flex-grow: 1;
+    position: relative;
+    border-left: 1px solid #bbb;
+    margin: 0.5em 0; }
+  .timetable .grid > div::after {
+    position: absolute;
+    display: block;
+    content: attr(data-content);
+    left: -50%;
+    color: #bbb;
+    width: 100%;
+    text-align: center;
+    top: calc(100% + 1em); }
+
+.timetable .record {
+  margin: 7px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #333; }
+  .timetable .record input[type='checkbox'] {
+    display: none; }
+  .timetable .record > .record-header {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: calc(100% - 14px);
+    max-height: calc(100% - 5px);
+    vertical-align: bottom;
+    text-align: right;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    transition: max-width .25s linear 1s, max-height .25s linear 1s, background-color .25s ease-in-out;
+    padding-top: 0; }
+    .timetable .record > .record-header > div {
+      width: 15em;
+      height: 15em; }
+  .timetable .record .record-tg:checked + .record-header {
+    max-width: 15em;
+    max-height: 4em;
+    right: auto;
+    top: auto;
+    transition: max-width .25s linear, max-height .25s linear; }
+  .timetable .record .record-content {
+    max-height: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    left: 0;
+    transition: max-height 1s linear; }
+  .timetable .record .record-content > div {
+    padding: 4px;
+    width: 15em; }
+  .timetable .record .record-tg:checked + .record-header + .record-content {
+    max-height: 250px;
+    transition: max-height 1s linear .25s; }
+
+@media (max-width: 575px) {
+  .timetable {
+    height: auto; }
+    .timetable .grid {
+      visibility: hidden; }
+    .timetable .day {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1em; }
+      .timetable .day .day-header {
+        left: 0;
+        right: 0;
+        padding-top: 0.5em;
+        text-align: center;
+        width: auto; }
+      .timetable .day .day-content {
+        display: flex;
+        flex-direction: column; }
+        .timetable .day .day-content .record {
+          display: block; }
+          .timetable .day .day-content .record .record-header {
+            position: relative;
+            max-width: initial;
+            margin: 0 0.5em; }
+          .timetable .day .day-content .record .record-content {
+            position: initial;
+            max-width: initial;
+            padding: 0 0.5em; }
+            .timetable .day .day-content .record .record-content > div {
+              width: auto; } }
+
+/*# sourceMappingURL=timetable.css.map */

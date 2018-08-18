@@ -1,0 +1,97 @@
+<html>
+<head>
+ <link type="text/css" rel="stylesheet" href="../css/timetable.css"/>
+</head>
+<body>
+
+<div class="wrap-collabsible">
+    <input id="collapsible" class="toggle" type="checkbox">
+    <label for="collapsible" class="lbl-toggle">More Info</label>
+    <div class="collapsible-content">
+            <span>10. cvičení</span><br/>
+            <span>10. cvičení</span><br/>
+            <span>10. cvičení</span><br/>
+            <span>10. cvičení</span><br/>
+            <span>10. cvičení</span><br/>
+            <hr/>
+            <span>10. cvičení</span><br/>
+            <span>10. cvičení</span><br/>
+            <span>10. cvičení</span><br/>
+    </div>
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+<div class="record record-ctu lecture">
+    <input id="record_0" class="record-tg" type="checkbox"/>
+    <label for="record_0" class="record-header">
+        <span class="ctu ctu-code">B0B36PJV</span>
+        <span class="ctu ctu-time">11:00-12:30</span>
+        <span class="ctu ctu-room">T2:C3-51</span>
+    </label>
+    <div class="record-content">
+        <a href="#" class="ctu ctu-code">Programování v JAVA</a>
+        <span class="ctu ctu-type">Cvičení</span>
+        <hr/>
+        <a href="#" class="ctu-teacher">prof. Ing. Jan Kočí, CSc.</a>
+    </div>
+</div>
+
+
+<style>
+    .wrap-collabsible {
+        width: 300px;
+        position: relative;
+    }
+    input[type='checkbox'] {
+        display: none;
+    }
+    .lbl-toggle {
+        display: block;
+        position: absolute;
+        top:0px;
+        z-index: 1;
+
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        text-align: center;
+
+        padding: 1rem;
+
+        color: #A77B0E;
+        background: #FAE042;
+
+        cursor: pointer;
+
+        border-radius: 7px;
+        transition: all 0.25s ease-out;
+    }
+
+    .lbl-toggle:hover {
+        color: #7C5A0B;
+    }
+    .collapsible-content .content-inner {
+    }
+    .collapsible-content {
+        max-height: 0px;
+        overflow: hidden;
+        position: absolute;
+        top:0px;
+        transition: max-height .25s linear;
+        background: #FAE042;
+        border-bottom: 1px solid rgba(250, 224, 66, .45);
+
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        padding: .5rem 1rem;
+    }
+    .toggle:checked + .lbl-toggle + .collapsible-content {
+        max-height: 250px;
+    }
+</style>
+
+</body>
+</html>

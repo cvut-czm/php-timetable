@@ -1,0 +1,4 @@
+<div class="timetable %class%">
+    %grid%
+    %days%
+</div>

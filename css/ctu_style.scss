@@ -1,0 +1,54 @@
+
+$base_color:rgb(42, 82, 152);
+$lecture_bg:darken($base_color,20);
+$background: lighten($base_color,55);
+
+.record-ctu.lecture {
+  .record-header {
+    background: $lecture_bg;
+
+  }
+  input:active + .record-header, input:hover + .record-header, .record-header:hover{
+    background: lighten($lecture_bg,10);
+  }
+  .record-content > div{
+    border-bottom: 5px $lecture_bg solid;
+  }
+}
+.record-ctu {
+  .record-content > div {
+    background: white;
+    border-left: #aaa 1px solid;
+    border-right: #aaa 1px solid;
+  }
+  .ctu {
+    display: block;
+  }
+  .record-header {
+
+    .ctu-code {
+      font-size: 1.2em;
+    }
+    .ctu-time,.ctu-room {
+      font-size: 0.6em;
+    }
+    .ctu {
+      display: block;
+    }
+  }
+  .record-content{
+    .ctu-code{
+      text-decoration: none;
+      color: $lecture_bg;
+    }
+    .ctu-type {
+      color: lighten($base_color,25);
+      font-size: 0.75em;
+    }
+    .ctu-teacher {
+      text-decoration: none;
+      color: $lecture_bg;
+      font-size: 0.75em;
+    }
+  }
+}
