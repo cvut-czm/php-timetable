@@ -34,7 +34,7 @@ echo $t;
     #sidebar
     {
         font-size: 0.5em;
-        margin-left: auto;
+        margin: 10em auto;
         width: 208px;
     }
 </style>

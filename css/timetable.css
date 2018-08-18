@@ -118,6 +118,8 @@
   flex-direction: column;
   position: relative;
   color: #333; }
+  .timetable .record input:active + .record-header, .timetable .record input:hover + .record-header, .timetable .record .record-header:hover {
+    min-height: 1.2em; }
   .timetable .record input[type='checkbox'] {
     display: none; }
   .timetable .record > .record-header {
@@ -126,6 +128,8 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    min-height: 0;
+    z-index: 1;
     max-width: calc(100% - 14px);
     max-height: calc(100% - 5px);
     vertical-align: bottom;
@@ -134,7 +138,7 @@
     color: white;
     cursor: pointer;
     padding: 5px;
-    transition: max-width .25s linear 1s, max-height .25s linear 1s, background-color .25s ease-in-out;
+    transition: max-width .25s linear 1s, max-height .25s linear 1s, background-color .25s ease-in-out, min-height .25s linear, z-index 0s linear 1.25s;
     padding-top: 0; }
     .timetable .record > .record-header > div {
       width: 15em;
@@ -144,13 +148,14 @@
     max-height: 4em;
     right: auto;
     top: auto;
+    z-index: 10;
     transition: max-width .25s linear, max-height .25s linear; }
   .timetable .record .record-content {
     max-height: 0px;
     overflow: hidden;
     position: absolute;
     top: 100%;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     transition: max-height 1s linear; }
   .timetable .record .record-content > div {
