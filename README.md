@@ -6,8 +6,8 @@
   * **0** javascript scripts 
     * Pure HTML5 + CSS3 solution
   * **24** lines of HTML template code
-  * **139** lines of PHP scripts
-  * **167** lines of SCSS
+  * **133** lines of PHP scripts
+  * **171** lines of SCSS
   
 ## Features
   * Multi-language support

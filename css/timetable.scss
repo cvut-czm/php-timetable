@@ -133,6 +133,7 @@ $grid_color: #bbb;
     }
     .day {
       display: flex;
+      height: auto !important;
       flex-direction: column;
       padding-bottom: 1em;
       .day-header {
@@ -151,6 +152,9 @@ $grid_color: #bbb;
             position: relative;
             max-width: initial;
             margin: 0 0.5em;
+            > div {
+              height: 0;
+            }
           }
           .record-content {
             position: initial;

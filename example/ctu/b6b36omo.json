@@ -1,0 +1,174 @@
+{
+  "events": [
+    {
+      "id": 304731029,
+      "name": null,
+      "sequence_number": 2,
+      "starts_at": "2018-10-08T09:15:00.000+02:00",
+      "ends_at": "2018-10-08T10:45:00.000+02:00",
+      "deleted": false,
+      "capacity": 150,
+      "occupied": 82,
+      "event_type": "lecture",
+      "parallel": "1",
+      "original_data": {},
+      "links": {
+        "course": "B6B36OMO",
+        "room": "T2:D3-309",
+        "teachers": [
+          "kadlecd"
+        ]
+      }
+    },
+    {
+      "id": 304730976,
+      "name": null,
+      "sequence_number": 2,
+      "starts_at": "2018-10-09T09:15:00.000+02:00",
+      "ends_at": "2018-10-09T10:45:00.000+02:00",
+      "deleted": false,
+      "capacity": 21,
+      "occupied": 21,
+      "event_type": "tutorial",
+      "parallel": "103",
+      "original_data": {},
+      "links": {
+        "course": "B6B36OMO",
+        "room": "KN:E-311",
+        "teachers": [
+          "kukacdav"
+        ]
+      }
+    },
+    {
+      "id": 304730989,
+      "name": null,
+      "sequence_number": 2,
+      "starts_at": "2018-10-09T11:00:00.000+02:00",
+      "ends_at": "2018-10-09T12:30:00.000+02:00",
+      "deleted": false,
+      "capacity": 21,
+      "occupied": 21,
+      "event_type": "tutorial",
+      "parallel": "104",
+      "original_data": {},
+      "links": {
+        "course": "B6B36OMO",
+        "room": "KN:E-311",
+        "teachers": [
+          "kukacdav"
+        ]
+      }
+    },
+    {
+      "id": 304731002,
+      "name": null,
+      "sequence_number": 2,
+      "starts_at": "2018-10-09T12:45:00.000+02:00",
+      "ends_at": "2018-10-09T14:15:00.000+02:00",
+      "deleted": false,
+      "capacity": 0,
+      "occupied": 0,
+      "event_type": "tutorial",
+      "parallel": "105",
+      "original_data": {},
+      "links": {
+        "course": "B6B36OMO",
+        "room": "KN:E-311",
+        "teachers":  [
+          "mayerto1",
+          "balikm1"
+        ]
+      }
+    },
+    {
+      "id": 304731002,
+      "name": null,
+      "sequence_number": 2,
+      "starts_at": "2018-10-09T12:00:00.000+02:00",
+      "ends_at": "2018-10-09T13:30:00.000+02:00",
+      "deleted": false,
+      "capacity": 0,
+      "occupied": 0,
+      "event_type": "tutorial",
+      "parallel": "105",
+      "original_data": {},
+      "links": {
+        "course": "B6B36OMO",
+        "room": "KN:E-311",
+        "teachers":  [
+          "mayerto1",
+          "balikm1"
+        ]
+      }
+    },
+    {
+      "id": 304730948,
+      "name": null,
+      "sequence_number": 2,
+      "starts_at": "2018-10-11T09:15:00.000+02:00",
+      "ends_at": "2018-10-11T10:45:00.000+02:00",
+      "deleted": false,
+      "capacity": 21,
+      "occupied": 19,
+      "event_type": "tutorial",
+      "parallel": "101",
+      "original_data": {},
+      "links": {
+        "course": "B6B36OMO",
+        "room": "KN:E-311",
+        "teachers": [
+          "balikm1",
+          "mayerto1"
+        ]
+      }
+    },
+    {
+      "id": 304730962,
+      "name": null,
+      "sequence_number": 2,
+      "starts_at": "2018-10-11T11:00:00.000+02:00",
+      "ends_at": "2018-10-11T12:30:00.000+02:00",
+      "deleted": false,
+      "capacity": 21,
+      "occupied": 21,
+      "event_type": "tutorial",
+      "parallel": "102",
+      "original_data": {},
+      "links": {
+        "course": "B6B36OMO",
+        "room": "KN:E-311",
+        "teachers": [
+          "mayerto1",
+          "balikm1"
+        ]
+      }
+    },
+    {
+      "id": 304731015,
+      "name": null,
+      "sequence_number": 2,
+      "starts_at": "2018-10-11T12:45:00.000+02:00",
+      "ends_at": "2018-10-11T14:15:00.000+02:00",
+      "deleted": false,
+      "capacity": 0,
+      "occupied": 0,
+      "event_type": "tutorial",
+      "parallel": "106",
+      "original_data": {},
+      "links": {
+        "course": "B6B36OMO",
+        "room": "KN:E-311",
+        "teachers": [
+          "mayerto1",
+          "balikm1"
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "count": 7,
+    "limit": 20,
+    "offset": 0
+  }
+}

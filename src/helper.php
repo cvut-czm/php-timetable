@@ -14,9 +14,7 @@ trait helper {
                 $this->days[] = new day($options, $day);
             }
         }
-        if (property_exists(static::class, 'title')) {
-            $this->title = $title;
-        }
+        $this->title = $title;
     }
 
     protected function render_cols(): int {

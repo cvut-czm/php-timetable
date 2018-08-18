@@ -10,24 +10,28 @@ class day {
         uasort($this->records, function(record $a, record $b) {
             return $a->compare($b);
         });
-        $records =& $this->records;
-
         $lastrecords = [null, null, null, null];
-        foreach ($records as $record) {
+        foreach ($this->records as $record) {
             for ($line = 0; $line < 4; $line++) {
-                $lastrecord = $lastrecords[$line];
-                if ($lastrecord == null || $record->compare($lastrecord, 'start', 'end')) {
-                    $span = 12 / ($line + 1);
-                    $record->row = [$line * $span + 1, $span];
+                if ($lastrecords[$line] == null || $record->compare($lastrecords[$line], 'start', 'end') !== -1) {
                     $lastrecords[$line] = $record;
-                    for ($e = $line - 1; $e >= 0; $e--) {
+                    $count = 0;
+                    for ($f = $line + 1; $f < 4; $f++) {
+                        $count += $lastrecords[$f] != null && $record->compare($lastrecords[$f], 'start', 'end') == -1 ? 1 : 0;
+                    }
+                    $span = 12 / ($line + $count + 1);
+                    for ($e = 0; $e < $line + $count + 1; $e++) {
                         $lastrecords[$e]->row = [$e * $span + 1, $span];
                     }
                     break;
                 }
             }
         }
-        $title=$this->o->show_day_header?($this->o->show_day_abbrev?$this->title.'_abbrev':$this->title):'empty';
-        return $this->partial('day', ['%vh%'=>$this->o->day_height,'%header%' => $this->ln($title), '%records%' => $this->partials($this->records)]);
+        $title = $this->o->show_day_header ? ($this->o->show_day_abbrev ? $this->title . '_abbrev' : $this->title) : 'empty';
+        uasort($this->records, function(record $a, record $b) {
+            return $a->row[0] == $b->row[0] ? -$a->compare($b) : ($a->row[0] < $b->row[0] ? -1 : 1);
+        });
+        return $this->partial('day',
+                ['%vh%' => $this->o->day_height, '%header%' => $this->ln($title), '%records%' => $this->partials($this->records)]);
     }
 }

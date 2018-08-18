@@ -1,7 +1,41 @@
 
 $base_color:rgb(42, 82, 152);
 $lecture_bg:darken($base_color,20);
+$tutorial_bg: lighten($base_color,15);
 $background: lighten($base_color,55);
+
+.caption {
+  height: 2em;
+  text-align: center;
+  margin-top: 2.5em;
+  padding: 0.5em;
+  padding-bottom: 0;
+  .lecture::before {
+    content: '';
+    display: inline-block;
+    width: 2em;
+    vertical-align: -25%;
+    height: 1.4em;
+    background-color: $lecture_bg;
+    margin-right: 0.25em;
+  }
+  .lecture {
+    color: $lecture_bg;
+    margin-right: 1em;
+  }
+  .tutorial::before {
+    content: '';
+    display: inline-block;
+    width: 2em;
+    vertical-align: -25%;
+    height: 1.4em;
+    background-color: $tutorial_bg;
+    margin-right: 0.25em;
+  }
+  .tutorial {
+    color: $tutorial_bg;
+  }
+}
 
 .record-ctu.lecture {
   .record-header {
@@ -15,6 +49,20 @@ $background: lighten($base_color,55);
     border-bottom: 5px $lecture_bg solid;
   }
 }
+
+.record-ctu.tutorial {
+  .record-header {
+    background: $tutorial_bg;
+
+  }
+  input:active + .record-header, input:hover + .record-header, .record-header:hover{
+    background: lighten($tutorial_bg,10);
+  }
+  .record-content > div{
+    border-bottom: 5px $tutorial_bg solid;
+  }
+}
+
 .record-ctu {
   .record-content > div {
     background: white;
