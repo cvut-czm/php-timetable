@@ -3,6 +3,8 @@ $base_color:rgb(42, 82, 152);
 $lecture_bg:darken($base_color,20);
 $tutorial_bg: lighten($base_color,15);
 $background: lighten($base_color,55);
+$test: #5eba7d;
+$test2: #f48024;
 
 .caption {
   height: 2em;
@@ -37,6 +39,20 @@ $background: lighten($base_color,55);
   }
 }
 
+.timetable .day-header{
+  text-align: center;
+  * {
+    display: block;
+  }
+  span {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  small {
+    font-size: 0.8em;
+  }
+}
+
 .record-ctu.lecture {
   .record-header {
     background: $lecture_bg;
@@ -50,6 +66,30 @@ $background: lighten($base_color,55);
   }
 }
 
+.record-ctu.test {
+  .record-header {
+    background: $test;
+
+  }
+  input:active + .record-header, input:hover + .record-header, .record-header:hover{
+    background: lighten($test,10);
+  }
+  .record-content > div{
+    border-bottom: 5px $test solid;
+  }
+}
+.record-ctu.test2 {
+  .record-header {
+    background: $test2;
+
+  }
+  input:active + .record-header, input:hover + .record-header, .record-header:hover{
+    background: lighten($test2,10);
+  }
+  .record-content > div{
+    border-bottom: 5px $test2 solid;
+  }
+}
 .record-ctu.tutorial {
   .record-header {
     background: $tutorial_bg;

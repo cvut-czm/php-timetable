@@ -26,12 +26,36 @@
   .caption .tutorial {
     color: #4375cb; }
 
+.timetable .day-header {
+  text-align: center; }
+  .timetable .day-header * {
+    display: block; }
+  .timetable .day-header span {
+    font-size: 1.2em;
+    font-weight: bold; }
+  .timetable .day-header small {
+    font-size: 0.8em; }
+
 .record-ctu.lecture .record-header {
   background: #142748; }
 .record-ctu.lecture input:active + .record-header, .record-ctu.lecture input:hover + .record-header, .record-ctu.lecture .record-header:hover {
   background: #1f3c70; }
 .record-ctu.lecture .record-content > div {
   border-bottom: 5px #142748 solid; }
+
+.record-ctu.test .record-header {
+  background: #5eba7d; }
+.record-ctu.test input:active + .record-header, .record-ctu.test input:hover + .record-header, .record-ctu.test .record-header:hover {
+  background: #82c99a; }
+.record-ctu.test .record-content > div {
+  border-bottom: 5px #5eba7d solid; }
+
+.record-ctu.test2 .record-header {
+  background: #f48024; }
+.record-ctu.test2 input:active + .record-header, .record-ctu.test2 input:hover + .record-header, .record-ctu.test2 .record-header:hover {
+  background: #f69c55; }
+.record-ctu.test2 .record-content > div {
+  border-bottom: 5px #f48024 solid; }
 
 .record-ctu.tutorial .record-header {
   background: #4375cb; }
@@ -81,7 +105,6 @@
       margin-bottom: auto; }
     .timetable > .day > .day-content {
       display: grid;
-      grid-template-columns: repeat(56, 1fr);
       grid-template-rows: repeat(12, 1fr);
       flex-grow: 1; }
 
@@ -90,27 +113,36 @@
 .timetable.headless .grid {
   left: 0; }
 
-.timetable .grid {
-  display: flex;
-  position: absolute;
-  left: 6em;
-  right: 0;
-  top: 0;
-  bottom: 0; }
-  .timetable .grid > div {
-    flex-grow: 1;
-    position: relative;
-    border-left: 1px solid #bbb;
-    margin: 0.5em 0; }
-  .timetable .grid > div::after {
+.timetable {
+  margin-bottom: 2em; }
+  .timetable .grid::before {
     position: absolute;
     display: block;
     content: attr(data-content);
-    left: -50%;
+    left: -6em;
     color: #bbb;
-    width: 100%;
-    text-align: center;
-    top: calc(100% + 1em); }
+    top: calc(100% + 0.4em); }
+  .timetable .grid {
+    display: flex;
+    position: absolute;
+    left: 6em;
+    right: 0;
+    top: 0;
+    bottom: 0; }
+    .timetable .grid > div {
+      flex-grow: 1;
+      position: relative;
+      border-left: 1px solid #bbb;
+      margin: 0.5em 0; }
+    .timetable .grid > div::after {
+      position: absolute;
+      display: block;
+      content: attr(data-content);
+      left: -50%;
+      color: #bbb;
+      width: 100%;
+      text-align: center;
+      top: calc(100% + 1em); }
 
 .timetable .record {
   margin: 7px 0;
@@ -124,13 +156,15 @@
     display: none; }
   .timetable .record > .record-header {
     overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
     display: block;
     position: absolute;
     left: 0;
     bottom: 0;
     min-height: 0;
     z-index: 1;
-    max-width: calc(100% - 14px);
+    max-width: calc(100% - 5px);
     max-height: calc(100% - 5px);
     vertical-align: bottom;
     text-align: right;
@@ -141,8 +175,8 @@
     transition: max-width .25s linear 1s, max-height .25s linear 1s, background-color .25s ease-in-out, min-height .25s linear, z-index 0s linear 1.25s;
     padding-top: 0; }
     .timetable .record > .record-header > div {
-      width: 15em;
-      height: 15em; }
+      width: 30em;
+      height: 30em; }
   .timetable .record .record-tg:checked + .record-header {
     max-width: 15em;
     max-height: 4em;

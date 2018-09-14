@@ -1,8 +1,1 @@
-<div class="day" style="height: %vh%;">
-    <div class="day-header">
-        %header%
-    </div>
-    <div class="day-content">
-        %records%
-    </div>
-</div>
+<div class="day" style="height: %vh%;"><div class="day-header">%header%</div><div class="day-content">%records%</div></div>

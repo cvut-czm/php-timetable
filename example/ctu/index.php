@@ -105,8 +105,7 @@
                     <li>Čisté HTML + CSS řešení</li>
                 </ul>
             </li>
-            <li><b>24</b> řádků HTML template</li>
-            <li><b>133</b> řádků PHP kódu</li>
+            <li><b>110</b> řádků PHP kódu</li>
             <li><b>171</b> řádků SCSS</li>
         </ul>
     </div>

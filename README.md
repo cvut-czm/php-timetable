@@ -5,8 +5,7 @@
     * Even front-end frameworks
   * **0** javascript scripts 
     * Pure HTML5 + CSS3 solution
-  * **24** lines of HTML template code
-  * **133** lines of PHP scripts
+  * **110** lines of PHP scripts
   * **171** lines of SCSS
   
 ## Features

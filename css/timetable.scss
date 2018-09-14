@@ -25,13 +25,11 @@ $grid_color: #bbb;
     }
     > .day-content {
       display: grid;
-      grid-template-columns: repeat(56, 1fr); //Hack
       grid-template-rows: repeat(12, 1fr);
       flex-grow: 1;
     }
   }
 }
-
 .timetable.headless {
   .day-header {
     visibility: hidden;
@@ -42,6 +40,15 @@ $grid_color: #bbb;
 }
 
 .timetable {
+  margin-bottom: 2em;
+  .grid::before{
+    position: absolute;
+    display: block;
+    content: attr(data-content);
+    left: -6em;
+    color: #bbb;
+    top: calc(100% + 0.4em);
+  }
   .grid {
     display: flex;
     position: absolute;
@@ -83,13 +90,15 @@ $grid_color: #bbb;
     }
     > .record-header {
       overflow: hidden;
+      box-sizing: border-box;
+      margin: 0;
       display: block;
       position: absolute;
       left: 0;
       bottom: 0;
       min-height: 0;
       z-index: 1;
-      max-width: calc(100% - 14px);
+      max-width: calc(100% - 5px);
       max-height: calc(100% - 5px);
       vertical-align: bottom;
       text-align: right;
@@ -100,8 +109,8 @@ $grid_color: #bbb;
       transition: max-width .25s linear 1s, max-height .25s linear 1s, background-color .25s ease-in-out, min-height .25s linear, z-index 0s linear 1.25s;
       padding-top: 0;
       > div {
-        width: 15em;
-        height: 15em;
+        width: 30em;
+        height: 30em;
       }
     }
     .record-tg:checked + .record-header {

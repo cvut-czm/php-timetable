@@ -1,12 +1,5 @@
 <div class="record %class%" %grid%>
     <input %disabled% id="record_in_%id%" class="record-tg" type="checkbox"/>
-    <label for="record_in_%id%" class="record-header">
-        %label%
-        <div></div>
-    </label>
-    <div class="record-content">
-        <div>
-            %content%
-        </div>
-    </div>
+    <label for="record_in_%id%" class="record-header">%label%<div></div></label>
+    <div class="record-content"><div>%content%</div></div>
 </div>

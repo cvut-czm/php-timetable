@@ -1,4 +1,1 @@
-<div class="timetable %class%">
-    %grid%
-    %days%
-</div>
+<div class="timetable %class%">%grid%%days%</div>

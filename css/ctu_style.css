@@ -1,7 +1,90 @@
-.record-ctu.lecture .record-header {
-  background: #2a5298; }
+.caption {
+  height: 2em;
+  text-align: center;
+  margin-top: 2.5em;
+  padding: 0.5em;
+  padding-bottom: 0; }
+  .caption .lecture::before {
+    content: '';
+    display: inline-block;
+    width: 2em;
+    vertical-align: -25%;
+    height: 1.4em;
+    background-color: #142748;
+    margin-right: 0.25em; }
+  .caption .lecture {
+    color: #142748;
+    margin-right: 1em; }
+  .caption .tutorial::before {
+    content: '';
+    display: inline-block;
+    width: 2em;
+    vertical-align: -25%;
+    height: 1.4em;
+    background-color: #4375cb;
+    margin-right: 0.25em; }
+  .caption .tutorial {
+    color: #4375cb; }
 
+.timetable .day-header {
+  text-align: center; }
+  .timetable .day-header * {
+    display: block; }
+  .timetable .day-header span {
+    font-size: 1.2em;
+    font-weight: bold; }
+  .timetable .day-header small {
+    font-size: 0.8em; }
+
+.record-ctu.lecture .record-header {
+  background: #142748; }
+.record-ctu.lecture input:active + .record-header, .record-ctu.lecture input:hover + .record-header, .record-ctu.lecture .record-header:hover {
+  background: #1f3c70; }
+.record-ctu.lecture .record-content > div {
+  border-bottom: 5px #142748 solid; }
+
+.record-ctu.test .record-header {
+  background: #5eba7d; }
+.record-ctu.test input:active + .record-header, .record-ctu.test input:hover + .record-header, .record-ctu.test .record-header:hover {
+  background: #82c99a; }
+.record-ctu.test .record-content > div {
+  border-bottom: 5px #5eba7d solid; }
+
+.record-ctu.test2 .record-header {
+  background: #f48024; }
+.record-ctu.test2 input:active + .record-header, .record-ctu.test2 input:hover + .record-header, .record-ctu.test2 .record-header:hover {
+  background: #f69c55; }
+.record-ctu.test2 .record-content > div {
+  border-bottom: 5px #f48024 solid; }
+
+.record-ctu.tutorial .record-header {
+  background: #4375cb; }
+.record-ctu.tutorial input:active + .record-header, .record-ctu.tutorial input:hover + .record-header, .record-ctu.tutorial .record-header:hover {
+  background: #6b92d6; }
+.record-ctu.tutorial .record-content > div {
+  border-bottom: 5px #4375cb solid; }
+
+.record-ctu .record-content > div {
+  background: white;
+  border-left: #aaa 1px solid;
+  border-right: #aaa 1px solid; }
+.record-ctu .ctu {
+  display: block; }
+.record-ctu .record-header .ctu-code {
+  font-size: 1.2em; }
+.record-ctu .record-header .ctu-time, .record-ctu .record-header .ctu-room {
+  font-size: 0.6em; }
 .record-ctu .record-header .ctu {
   display: block; }
+.record-ctu .record-content .ctu-code {
+  text-decoration: none;
+  color: #142748; }
+.record-ctu .record-content .ctu-type {
+  color: #6b92d6;
+  font-size: 0.75em; }
+.record-ctu .record-content .ctu-teacher {
+  text-decoration: none;
+  color: #142748;
+  font-size: 0.75em; }
 
 /*# sourceMappingURL=ctu_style.css.map */
